@@ -1,0 +1,28 @@
+spring.application.name: testme
+
+database-url: localhost
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${database-url}:5432/postgres
+    username: postgres
+    password: changeme
+    hikari:
+      minimumIdle: 2
+      maximumPoolSize: 5
+      connectionTimeout: 500
+  jpa:
+    hibernate.ddl-auto: update
+    #hibernate.ddl-auto: none
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    open-in-view: false
+
+logging:
+  level:
+    root=INFO:
+
